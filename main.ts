@@ -85,7 +85,7 @@ const wasmEnv = {
 }
 
 WebAssembly.instantiateStreaming(
-	fetch("/static/wasm/main.wasm"), { env: wasmEnv },
+	fetch("./static/wasm/main.wasm"), { env: wasmEnv },
 ).then(obj => {
 	memory = obj.instance.exports.memory as WebAssembly.Memory
 	const init = obj.instance.exports.init as VoidFunction
