@@ -73,7 +73,7 @@ var wasmEnv = {
     glContext.drawArrays(mode, first, count);
   }
 };
-WebAssembly.instantiateStreaming(fetch("/static/wasm/main.wasm"), { env: wasmEnv }).then((obj) => {
+WebAssembly.instantiateStreaming(fetch("./static/wasm/main.wasm"), { env: wasmEnv }).then((obj) => {
   memory = obj.instance.exports.memory;
   const init = obj.instance.exports.init;
   init();
